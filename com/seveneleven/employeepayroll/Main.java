@@ -3,11 +3,12 @@
  * Provides an interactive console menu using advanced switch statement
  * to explore different use case functionalities.
  * @author developer
- * @version 1.0
+ * @version 2.0
  */
 package com.seveneleven.employeepayroll;
 
 import com.seveneleven.employeepayroll.runner.RegistrationRunner;
+import com.seveneleven.employeepayroll.runner.AuthenticationRunner;
 import java.util.Scanner;
 
 public class Main {
@@ -20,6 +21,7 @@ public class Main {
             System.out.println("║   EMPLOYEE PAYROLL MANAGEMENT SYSTEM     ║");
             System.out.println("╠══════════════════════════════════════════╣");
             System.out.println("║  1. Employee Registration                ║");
+            System.out.println("║  2. Employee Authentication & Login      ║");
             System.out.println("║  0. Exit                                 ║");
             System.out.println("╚══════════════════════════════════════════╝");
             System.out.print("Enter your choice: ");
@@ -29,6 +31,7 @@ public class Main {
 
             switch (choice) {
                 case 1 -> RegistrationRunner.run();
+                case 2 -> AuthenticationRunner.run();
                 case 0 -> {
                     running = false;
                     System.out.println("\nThank you for using Employee Payroll System!");

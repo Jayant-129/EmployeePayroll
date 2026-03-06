@@ -12,3 +12,11 @@ Employee Payroll Management System built using Java OOP concepts.
 - Overridden toString() for formatted employee display
 - Applied composition pattern with Employee containing UserAccount
 - Generated unique employee IDs and stored encrypted credentials
+
+### UC2: Employee Authentication & Login
+- Authenticated employees and provided role-based dashboard access
+- Implemented inheritance hierarchy with abstract User class
+- Used polymorphism with overridden authenticate() in RegularEmployee and Manager
+- Applied password hashing using SHA-256 for secure credential storage
+- Managed sessions with unique session IDs and login tracking
+- Implemented account lockout after multiple failed login attempts
