@@ -20,3 +20,11 @@ Employee Payroll Management System built using Java OOP concepts.
 - Applied password hashing using SHA-256 for secure credential storage
 - Managed sessions with unique session IDs and login tracking
 - Implemented account lockout after multiple failed login attempts
+
+### UC3: Payslip Generation
+- Generated detailed monthly payslip with salary breakdown
+- Implemented composition with Payslip containing SalaryComponents
+- Used aggregation with Payslip referencing Employee
+- Applied Stream API for salary calculations
+- Built fluent interface for flexible salary structure configuration
+- Overridden toString() for professional payslip formatting
