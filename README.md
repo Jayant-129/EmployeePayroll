@@ -36,3 +36,11 @@ Employee Payroll Management System built using Java OOP concepts.
 - Applied File I/O for saving payslips to text files
 - Generated unique filenames with timestamps for version control
 - Preserved original payslip data through immutable handling
+
+### UC5: Dashboard Display
+- Displayed personalized payroll dashboard based on user role
+- Implemented Dashboard interface for pluggable dashboard types
+- Used getClass() for runtime type checking and identification
+- Applied Stream API for processing collections of payslips
+- Used Comparator for sorting payslips by date
+- Implemented abstract factory pattern for dashboard creation
