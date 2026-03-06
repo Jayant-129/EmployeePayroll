@@ -44,3 +44,11 @@ Employee Payroll Management System built using Java OOP concepts.
 - Applied Stream API for processing collections of payslips
 - Used Comparator for sorting payslips by date
 - Implemented abstract factory pattern for dashboard creation
+
+### UC6: Input Validation
+- Validated all user inputs using centralized validation service
+- Implemented exception inheritance hierarchy with PayrollException as base
+- Created custom exceptions for email, phone, password, employee ID, and authentication
+- Applied regex patterns for format validation
+- Used fail-fast validation to throw exceptions immediately on invalid input
+- Implemented input sanitization to prevent injection attacks

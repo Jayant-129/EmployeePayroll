@@ -3,7 +3,7 @@
  * Provides an interactive console menu using advanced switch statement
  * to explore different use case functionalities.
  * @author developer
- * @version 5.0
+ * @version 6.0
  */
 package com.seveneleven.employeepayroll;
 
@@ -12,6 +12,7 @@ import com.seveneleven.employeepayroll.runner.AuthenticationRunner;
 import com.seveneleven.employeepayroll.runner.PayslipGenerationRunner;
 import com.seveneleven.employeepayroll.runner.PayslipDownloadRunner;
 import com.seveneleven.employeepayroll.runner.DashboardRunner;
+import com.seveneleven.employeepayroll.runner.ValidationRunner;
 import java.util.Scanner;
 
 public class Main {
@@ -28,6 +29,7 @@ public class Main {
             System.out.println("║  3. Payslip Generation                   ║");
             System.out.println("║  4. Payslip Print / Download             ║");
             System.out.println("║  5. Dashboard Display                    ║");
+            System.out.println("║  6. Input Validation                     ║");
             System.out.println("║  0. Exit                                 ║");
             System.out.println("╚══════════════════════════════════════════╝");
             System.out.print("Enter your choice: ");
@@ -41,6 +43,7 @@ public class Main {
                 case 3 -> PayslipGenerationRunner.run();
                 case 4 -> PayslipDownloadRunner.run();
                 case 5 -> DashboardRunner.run();
+                case 6 -> ValidationRunner.run();
                 case 0 -> {
                     running = false;
                     System.out.println("\nThank you for using Employee Payroll System!");
