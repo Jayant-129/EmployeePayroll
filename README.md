@@ -28,3 +28,11 @@ Employee Payroll Management System built using Java OOP concepts.
 - Applied Stream API for salary calculations
 - Built fluent interface for flexible salary structure configuration
 - Overridden toString() for professional payslip formatting
+
+### UC4: Payslip Print / Download
+- Generated downloadable payslip copies using deep cloning
+- Implemented equals() and hashCode() for payslip comparison and deduplication
+- Used Object cloning with deep copy for independent payslip copies
+- Applied File I/O for saving payslips to text files
+- Generated unique filenames with timestamps for version control
+- Preserved original payslip data through immutable handling

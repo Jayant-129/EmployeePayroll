@@ -1,16 +1,18 @@
 /**
  * Represents a monthly payslip containing employee details and salary breakdown.
  * Demonstrates aggregation with Employee and composition with SalaryComponents.
+ * Implements equals(), hashCode(), and Cloneable for object comparison and cloning.
  * Overrides toString() for professional payslip formatting.
  * @author developer
- * @version 3.0
+ * @version 4.0
  */
 package com.seveneleven.employeepayroll.model;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
-public class Payslip {
+public class Payslip implements Cloneable {
     private String payslipId;
     private Employee employee;
     private SalaryComponents salaryComponents;
@@ -40,6 +42,41 @@ public class Payslip {
 
     public double getGrossSalary() {
         return salaryComponents.getGrossSalary();
+    }
+
+    @Override
+    public Payslip clone() {
+        try {
+            Payslip cloned = (Payslip) super.clone();
+            cloned.salaryComponents = new SalaryComponents()
+                    .withBasicSalary(this.salaryComponents.getBasicSalary())
+                    .withHRA(this.salaryComponents.getHra())
+                    .withConveyanceAllowance(this.salaryComponents.getConveyanceAllowance())
+                    .withMedicalAllowance(this.salaryComponents.getMedicalAllowance())
+                    .withSpecialAllowance(this.salaryComponents.getSpecialAllowance())
+                    .withProvidentFund(this.salaryComponents.getProvidentFund())
+                    .withProfessionalTax(this.salaryComponents.getProfessionalTax())
+                    .withIncomeTax(this.salaryComponents.getIncomeTax());
+            return cloned;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("Clone not supported", e);
+        }
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Payslip other = (Payslip) obj;
+        return year == other.year &&
+               Objects.equals(payslipId, other.payslipId) &&
+               Objects.equals(month, other.month) &&
+               Objects.equals(employee.getEmployeeId(), other.employee.getEmployeeId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(payslipId, month, year, employee.getEmployeeId());
     }
 
     @Override
